@@ -15,6 +15,7 @@ The Linux shell is your primary interface for interacting with the operating sys
 | `mkdir` | `mkdir <directory_name>` | Create a directory | Make a new folder |
 | `mkdir -p` | `mkdir -p <path/to/new/folder>` | Create parent folders automatically | Build nested directory structures safely |
 | `touch` | `touch <file_name>` | Create an empty file or update timestamps | Create a blank file quickly |
+| `cat` | `cat <file_name>`, `cat <file1> <file2>` | Display file contents, including multiple files | View text files or combine multiple files |
 | `rmdir` | `rmdir <empty_directory>` | Remove an empty directory | Delete directories that contain no files |
 | `rm -r` | `rm -r <directory>` | Remove directories recursively | Delete folders and their contents |
 | `rm -rf` | `rm -rf <directory>` | Force recursive removal | Delete files/directories without prompts |
@@ -77,6 +78,22 @@ intro.md
 - `mkdir` creates a directory.
 - `mkdir -p` creates nested directories automatically and does not fail if parent folders already exist.
 - `touch` creates an empty file if it doesn't exist.
+
+```bash
+[janindu@rhel ~]$ touch notes.txt
+[janindu@rhel ~]$ echo "Linux is powerful" > notes.txt
+[janindu@rhel ~]$ cat notes.txt
+Linux is powerful
+
+[janindu@rhel ~]$ echo "Shell commands are useful" > another.txt
+[janindu@rhel ~]$ cat notes.txt another.txt
+Linux is powerful
+Shell commands are useful
+```
+
+- `cat` displays the contents of a file.
+- It can also read multiple files in sequence: `cat file1 file2`.
+- This is useful for viewing content or combining small text files quickly.
 
 #### 3) Removing and copying files
 
